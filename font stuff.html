@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Font Stuff</title>
+</head>
+
+<style>
+    #smallTextButton {
+    margin-left: 25px;
+    }
+
+    #mediumTextButton {
+    margin-left: 25px;
+    }
+
+    #largeTextButton {
+    margin-left: 25px;
+    }
+
+    #boldTextButton {
+    margin-left: 25px;
+    }
+
+    #italicTextButton{
+    margin-left: 25px;
+    }
+
+    #areaOfText {
+    resize: none;
+    width: 350px;
+    height: 100px;
+    font: 20px, arial;
+    }
+</style>
+
+<body>
+
+<textarea id="areaOfText" draggable="false"></textarea>
+<br>
+<button id="smallTextButton" type="button"  onclick="myFunction1()">Small Text</button>
+<button id="mediumTextButton" type="button" onclick="myFunction2()">Medium Text</button>
+<button id="largeTextButton" type="button" onclick="myFunction3()">Large Text</button>
+<button id="boldTextButton" type="button">Bold Text</button>
+<button id="italicTextButton" type="button">Italic Text</button>
+<br>
+<button type="submit" onclick="alertBox1()">Submit</button>
+
+<script>
+function myFunction1() {
+    document.getElementById("areaOfText").style.fontSize = "xx-small";
+}
+function myFunction2() {
+    document.getElementById("areaOfText").style.fontSize = "large";
+}
+function myFunction3() {
+    document.getElementById("areaOfText").style.fontSize = "xx-large";
+}
+
+function alertBox1() {
+    window.alert("Submitted");
+}
+</script>
+<script>
+var action = 1;
+var action2 = 1;
+
+$("#boldTextButton").on("click", viewSomething);
+
+function viewSomething() {
+    if ( action == 1 ) {
+        $("#areaOfText").css("font-weight", "bold");
+        action = 2;
+    } else {
+        $("#areaOfText").css("font-weight", "normal");
+        action = 1;
+    }
+}
+
+$("#italicTextButton").on("click", viewSomething2);
+
+function viewSomething2() {
+    if ( action2 == 1 ) {
+        $("#areaOfText").css("font-style", "italic");
+        action2 = 2;
+    } else {
+        $("#areaOfText").css("font-style", "normal");
+        action2 = 1;
+    }
+}
+
+</script>
+
+</body>
+</html>

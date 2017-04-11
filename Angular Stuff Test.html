@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="namesCtrl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+<div>
+    <p>Choose a word from the drop-down box:</p>
+    <p><select><option ng-repeat="x in items">{{x.item + ',' + x.cost}}</select></p>
+
+
+</div>
+
+<div>
+    <p>Type a letter in the input field:</p>
+    <p><input type="text" ng-model="test"></p>
+
+    <ul>
+        <li ng-repeat="x in names | filter : test">
+            {{ x.name + ', ' + x.country }}
+        </li>
+    </ul>
+</div>
+
+
+<div>
+        <p>Type a letter in the input field:</p>
+        <p><input type="text" ng-model="test"></p>
+
+    <ul>
+        <li ng-repeat="x in sports | filter : test">
+            {{ x.sport + ', ' + x.status }}
+        </li>
+    </ul>
+</div>
+
+<script src="namesController.js"></script>
+<!--<script src="sportsController.js"></script>
+<script src="dropdownController.js"></script>-->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
